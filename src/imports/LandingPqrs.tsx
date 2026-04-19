@@ -62,7 +62,7 @@ function ConoceMas() {
   );
 }
 
-function Box() {
+function Box({ onNavigateToForm }: { onNavigateToForm?: () => void }) {
   return (
     <div className="absolute contents left-[121px] top-[412px]" data-name="Box">
       <div className="absolute bg-[#f8f4e1] h-[350px] left-[121px] rounded-[15px] top-[412px] w-[515px]" />
@@ -79,10 +79,16 @@ function Box() {
       <div className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular','Noto_Sans:Regular',sans-serif] h-[23px] justify-center leading-[0] left-[236.5px] text-[#f8f4e1] text-[16px] text-center top-[696.5px] w-[165px]" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 400" }}>
         <p className="leading-[normal]">Consultalo aquí.</p>
       </div>
-      <div className="absolute bg-[#27423f] h-[50px] left-[428px] rounded-[15px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-[672px] w-[185px]" />
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular',sans-serif] h-[23px] justify-center leading-[0] left-[519.5px] not-italic text-[#f8f4e1] text-[16px] text-center top-[696.5px] w-[165px]">
+      <button
+        onClick={onNavigateToForm}
+        className="absolute bg-[#27423f] h-[50px] left-[428px] rounded-[15px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-[672px] w-[185px] cursor-pointer hover:opacity-90 transition-opacity"
+      />
+      <button
+        onClick={onNavigateToForm}
+        className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular',sans-serif] h-[23px] justify-center leading-[0] left-[519.5px] not-italic text-[#f8f4e1] text-[16px] text-center top-[696.5px] w-[165px] cursor-pointer hover:opacity-90 transition-opacity"
+      >
         <p className="leading-[normal]">Llena el formulario.</p>
-      </div>
+      </button>
       <p className="absolute font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular','Noto_Sans:Regular',sans-serif] h-[50px] leading-[normal] left-[428px] text-[#27423f] text-[18px] top-[612px] w-[185px]" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 400" }}>
         ¿Quieres abrir un proceso nuevo?
       </p>
@@ -90,7 +96,7 @@ function Box() {
   );
 }
 
-function Component1Landing() {
+function Component1Landing({ onNavigateToForm }: { onNavigateToForm?: () => void }) {
   return (
     <div className="absolute contents left-[-33px] top-[80px]" data-name="1- Landing">
       <div className="absolute h-[800px] left-0 top-[80px] w-[1440px]" data-name="image 2">
@@ -102,7 +108,7 @@ function Component1Landing() {
       <p className="absolute font-['FONTSPRING_DEMO_-_Isidora_Sans_Alt_Black:Regular','Noto_Sans:Black',sans-serif] h-[180px] leading-[normal] left-[58px] text-[#27423f] text-[70px] top-[142px] w-[520px]" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 900" }}>
         Tus PQRSC, fácil y rápido.
       </p>
-      <Box />
+      <Box onNavigateToForm={onNavigateToForm} />
     </div>
   );
 }
@@ -419,12 +425,12 @@ function Footer() {
   );
 }
 
-export default function LandingPqrs() {
+export default function LandingPqrs({ onNavigateToForm }: { onNavigateToForm?: () => void }) {
   return (
     <div className="bg-[#f8f4e1] relative size-full" data-name="Landing-PQRS">
       <Component3Secretarias />
       <ConoceMas />
-      <Component1Landing />
+      <Component1Landing onNavigateToForm={onNavigateToForm} />
       <Heading />
       <RevisarSolicitud />
       <Footer />
