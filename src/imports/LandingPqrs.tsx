@@ -8,6 +8,7 @@ import imgImage2 from "figma:asset/b1b4d300efc93470de5dc247dd92d57010a5b5f1.png"
 import imgCapturaDePantalla20260419ALas52038AM1 from "figma:asset/0f090bcd222d0de4c1084d93dc22b9a4cb38f76e.png";
 import imgFlorecita2 from "figma:asset/b37f250b5bdd003dce31cad0d99b97a9a7384edd.png";
 import imgFlorecita6 from "figma:asset/07624ba07ee7ad2d20ba36604f9fc7afb9b49625.png";
+import imgMesaDeTrabajo4A12 from "figma:asset/cae6f7c829fd5e18b3ab00859116c2b1a0bf4bbb.png";
 
 function Component3Secretarias() {
   return (
@@ -81,13 +82,13 @@ function Box({ onNavigateToForm }: { onNavigateToForm?: () => void }) {
       </div>
       <button
         onClick={onNavigateToForm}
-        className="absolute bg-[#27423f] h-[50px] left-[428px] rounded-[15px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-[672px] w-[185px] cursor-pointer hover:opacity-90 transition-opacity"
+        className="absolute bg-[#fd7471] h-[50px] left-[428px] rounded-[15px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-[672px] w-[185px] cursor-pointer hover:opacity-90 transition-opacity"
       />
       <button
         onClick={onNavigateToForm}
         className="-translate-x-1/2 -translate-y-1/2 absolute flex flex-col font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular',sans-serif] h-[23px] justify-center leading-[0] left-[519.5px] not-italic text-[#f8f4e1] text-[16px] text-center top-[696.5px] w-[165px] cursor-pointer hover:opacity-90 transition-opacity"
       >
-        <p className="leading-[normal]">Llena el formulario.</p>
+        <p className="leading-[normal]">Radicar PQRSD's</p>
       </button>
       <p className="absolute font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular','Noto_Sans:Regular',sans-serif] h-[50px] leading-[normal] left-[428px] text-[#27423f] text-[18px] top-[612px] w-[185px]" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 400" }}>
         ¿Quieres abrir un proceso nuevo?
@@ -113,20 +114,42 @@ function Component1Landing({ onNavigateToForm }: { onNavigateToForm?: () => void
   );
 }
 
-function Heading() {
+function Heading({ onNavigateToLogin }: { onNavigateToLogin?: () => void }) {
   return (
     <div className="absolute contents left-0 top-0" data-name="Heading">
       <div className="absolute bg-[#27423f] h-[80px] left-0 top-0 w-[1440px]" />
-      <div className="absolute left-[1365px] size-[58px] top-[11px]">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 58 58">
-          <circle cx="29" cy="29" fill="var(--fill-0, #FCDA4C)" id="Ellipse 1" r="29" />
-        </svg>
+
+      {/* Logo de Medellín */}
+      <div className="absolute h-[70px] left-[20px] top-[5px] w-[120px]">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <img alt="" className="absolute h-full left-0 max-w-none object-contain top-0 w-full" src={imgMesaDeTrabajo4A12} />
+        </div>
       </div>
-      <p className="absolute font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular',sans-serif] h-[18px] leading-[normal] left-[538px] not-italic text-[#f8f4e1] text-[18px] top-[30px] w-[235px]">Servicios a la ciudadania</p>
-      <p className="absolute font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular',sans-serif] h-[18px] leading-[normal] left-[802px] not-italic text-[#f8f4e1] text-[18px] top-[30px] w-[125px]">Trasparencia</p>
-      <p className="absolute font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular','Noto_Sans:Regular',sans-serif] h-[18px] leading-[normal] left-[1220px] text-[#f8f4e1] text-[18px] top-[31px] w-[125px]" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 400" }}>
-        Iniciar sesión
-      </p>
+
+      {/* Servicios a la ciudadanía - movido más a la derecha */}
+      <p className="absolute font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular',sans-serif] h-[18px] leading-[normal] left-[700px] not-italic text-[#f8f4e1] text-[18px] top-[30px] w-[235px]">Servicios a la ciudadania</p>
+
+      {/* Transparencia - movido más a la derecha */}
+      <p className="absolute font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular',sans-serif] h-[18px] leading-[normal] left-[964px] not-italic text-[#f8f4e1] text-[18px] top-[30px] w-[125px]">Trasparencia</p>
+
+      {/* Botón Iniciar sesión */}
+      <button onClick={onNavigateToLogin} className="absolute bg-[#f8f4e1] h-[40px] left-[1150px] rounded-[8px] top-[20px] w-[140px] hover:opacity-90 transition-opacity cursor-pointer">
+        <p className="font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular','Noto_Sans:Regular',sans-serif] leading-[normal] text-[#27423f] text-[18px] text-center" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 400" }}>
+          Iniciar sesión
+        </p>
+      </button>
+
+      {/* Botón de cambiar idioma */}
+      <button className="absolute bg-[#f8f4e1] h-[40px] left-[1310px] rounded-[8px] top-[20px] w-[100px] hover:opacity-90 transition-opacity cursor-pointer flex items-center justify-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#27423f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <p className="font-['FONTSPRING_DEMO_-_Isidora_Sans:Regular',sans-serif] leading-[normal] not-italic text-[#27423f] text-[14px] text-center">
+          ES
+        </p>
+      </button>
     </div>
   );
 }
@@ -425,13 +448,13 @@ function Footer() {
   );
 }
 
-export default function LandingPqrs({ onNavigateToForm }: { onNavigateToForm?: () => void }) {
+export default function LandingPqrs({ onNavigateToForm, onNavigateToLogin }: { onNavigateToForm?: () => void; onNavigateToLogin?: () => void }) {
   return (
     <div className="bg-[#f8f4e1] relative size-full" data-name="Landing-PQRS">
       <Component3Secretarias />
       <ConoceMas />
       <Component1Landing onNavigateToForm={onNavigateToForm} />
-      <Heading />
+      <Heading onNavigateToLogin={onNavigateToLogin} />
       <RevisarSolicitud />
       <Footer />
       <div className="absolute h-[44px] left-[645px] top-[1372px] w-[45px]" data-name="Florecita 2">
