@@ -131,13 +131,13 @@ function Datos({ usuario, setUsuario, password, setPassword, onSubmit }: {
   );
 }
 
-export default function InicioSesionPage({ onBack }: { onBack: () => void }) {
+export default function InicioSesionPage({ onBack, onLogin }: { onBack: () => void; onLogin: () => void }) {
   const [usuario, setUsuario] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = () => {
     console.log('Login:', { usuario, password });
-    alert('Inicio de sesión exitoso!');
+    onLogin();
   };
 
   return (
