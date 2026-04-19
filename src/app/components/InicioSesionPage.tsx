@@ -141,8 +141,8 @@ export default function InicioSesionPage({ onBack }: { onBack: () => void }) {
   };
 
   return (
-    <div className="bg-[#f8f4e1] relative size-full" data-name="Inicio Sesion">
-      <div className="absolute inset-[44.14%_-25.14%_-32.62%_61.67%]" data-name="Vector">
+    <div className="bg-[#f8f4e1] relative size-full min-h-screen overflow-auto" data-name="Inicio Sesion">
+      <div className="absolute inset-[44.14%_-25.14%_-32.62%_61.67%] z-0" data-name="Vector">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 914 906">
           <path d={svgPaths.p3dbf2e80} fill="var(--fill-0, #DFD6B4)" id="Vector" />
         </svg>
@@ -155,7 +155,7 @@ export default function InicioSesionPage({ onBack }: { onBack: () => void }) {
         setPassword={setPassword}
         onSubmit={handleSubmit}
       />
-      <div className="absolute h-[134px] left-[601px] top-[266px] w-[238px]" data-name="Empathy Map 1">
+      <div className="absolute h-[134px] left-[601px] top-[266px] w-[238px] z-10" data-name="Empathy Map 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgEmpathyMap1} />
       </div>
     </div>
